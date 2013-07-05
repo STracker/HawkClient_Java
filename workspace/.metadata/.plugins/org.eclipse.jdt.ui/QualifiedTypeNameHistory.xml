@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.security.KeyStore.Builder"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.crypto.Mac"/>
+<fullyQualifiedTypeName name="javax.crypto.spec.SecretKeySpec"/>
+<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.google.common.io.BaseEncoding"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="HawkClient.HawkCredentials"/>
+<fullyQualifiedTypeName name="com.loopj.android.http.AsyncHttpClient"/>
+<fullyQualifiedTypeName name="com.loopj.android.http.AsyncHttpResponseHandler"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="Tests.AsyncHttpTest"/>
+<fullyQualifiedTypeName name="HawkClient.HawkClient"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.nio.charset.Charset"/>
+<fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
+</qualifiedTypeNameHistroy>

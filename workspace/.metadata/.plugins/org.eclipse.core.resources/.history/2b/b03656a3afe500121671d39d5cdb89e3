@@ -1,0 +1,37 @@
+package Tests;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+public class AsyncHttpTest {
+
+	protected AsyncHttpClient _client;
+
+	/**
+	 * @param context
+	 */
+	public AsyncHttpTest() {
+		_client = new AsyncHttpClient();
+		_client.addHeader("Cache-Control", "no-cache");
+		_client.addHeader("Accept", "application/json");
+		//_client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+	}
+	
+	public void userGet(String url, String header) {
+		
+		_client.addHeader("Authorization", header);
+		
+		//make http request
+		_client.get(url, new AsyncHttpResponseHandler() {
+			@Override
+			public void onSuccess(String response) {
+				System.out.println(response);
+			}
+
+			@Override
+			public void onFailure(Throwable e, String response){
+				System.out.println(e.getLocalizedMessage());
+			}
+		});	
+	}
+}
