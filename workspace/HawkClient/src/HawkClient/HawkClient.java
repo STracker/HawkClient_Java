@@ -22,7 +22,7 @@ public class HawkClient {
 	    String normalized = generateNormalizedString(url, method, timestamp, nonce, credentials, payload, ext);	    
 		String mac = generateMAC(normalized, credentials);
 		
-		return "Hawk id=\"" + credentials.get_identifier() + "\", ts=\"" + timestamp + "\", nonce=\"" + nonce + "\", ext=\"" + ext + "\", mac=\"" + mac + "\"";
+		return "Hawk id=\"" + credentials.get_identifier() + "\", ts=\"" + timestamp + "\", nonce=\"" + nonce + "\", mac=\"" + mac + "\", ext=\"" + ext + "\"";
 	}
 
 	public static String createAuthorizationHeaderWithPayloadValidation(URL url, String method, String timestamp, String nonce, HawkCredentials credentials, String payload, String ext, String contentType) throws Exception {
@@ -39,7 +39,7 @@ public class HawkClient {
 	    String hash = generateMAC(normalized, credentials);
 	    String mac = generateMAC(generateNormalizedString(url, method, timestamp, nonce, credentials, payload, ext), credentials);
 	    
-	    return "Hawk id=\"" + credentials.get_identifier() + "\", ts=\"" + timestamp + "\", nonce=\"" + nonce + "\", hash=\"" + hash + "\", ext=\"" + ext + "\", mac=\"" + mac + "\"";
+	    return "Hawk id=\"" + credentials.get_identifier() + "\", ts=\"" + timestamp + "\", nonce=\"" + nonce + "\", mac=\"" + mac + "\", ext=\"" + ext + "\", hash=\"" + hash + "\"";
 	}
 	
 	private static String generateMAC(String normalized, HawkCredentials credentials) throws Exception {
