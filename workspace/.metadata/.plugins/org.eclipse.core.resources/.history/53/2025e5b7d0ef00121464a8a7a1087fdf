@@ -1,0 +1,11 @@
+package Tests;
+
+import java.net.URL;
+
+import HawkClient.HawkClient;
+import HawkClient.HawkCredentials;
+
+public class Test {
+	
+	
+}

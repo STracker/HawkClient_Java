@@ -1,0 +1,28 @@
+package Tests;
+
+import java.net.URL;
+
+import org.junit.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+import HawkClient.HawkClient;
+import HawkClient.HawkCredentials;
+
+@RunWith(JUnit4.class)
+public class Test {
+	
+	@Test
+	public void testGenerateAuthorizationHeader()
+	{
+		HawkCredentials credentials = new HawkCredentials("100000004098766", "werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn");
+		
+		String nonce = "09B8AFD6-B784-4981-ADD5-BEFF55C9E60D";
+	    String timestamp = "1374079191";
+	    String method = "GET";
+	    
+	    URL url = new URL("http://example.com/test/100005742427425");
+	    
+	    
+	}
+}

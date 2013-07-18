@@ -1,0 +1,79 @@
+package HawkClient;
+
+import java.net.URL;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+import com.google.common.io.BaseEncoding;
+
+public class HawkClient {
+
+	public static String createAuthorizationHeader(URL url, String method, String timestamp, String nonce, HawkCredentials credentials, String payload, String ext) throws Exception {
+
+		if (url == null || method == null || timestamp == null || nonce == null || credentials == null)
+			throw new Exception("url, method, timestamp, nonce and credentials are required!");
+		
+		payload = (payload == null) ? "" : payload;
+	    ext = (ext == null) ? "" : ext;
+		
+	    String normalized = generateNormalizedString(url, method, timestamp, nonce, credentials, payload, ext);	    
+		String mac = generateMAC(normalized, credentials);
+		
+		return "Hawk id=\"" + credentials.get_identifier() + "\", ts=\"" + timestamp + "\", nonce=\"" + nonce + "\", mac=\"" + mac + "\", ext=\"" + ext + "\"";
+	}
+	
+	/*
+	 * This is a private auxiliary function for generate a MAC using SHA256 algorithm.
+	 * 
+	 * @param normalized 	the normalized string.
+ 	 * @param credentials 	the user Hawk credentials.
+ 	 * 
+ 	 * @return The generated MAC in base64-encoded.
+	 * */
+	private static String generateMAC(String normalized, HawkCredentials credentials) throws Exception {
+		
+		String Algorithm = "HmacSHA256";
+		Mac mac = Mac.getInstance(Algorithm);
+		mac.init(new SecretKeySpec(credentials.get_key().getBytes("UTF-8"), Algorithm));
+		return BaseEncoding.base64().encode(mac.doFinal(normalized.getBytes("UTF8")));
+	}
+	
+	/*
+	 * This function generates a normalized string. 
+	 * In this function the port number is not used 
+	 * because of load balancing performed from some hosts.
+	 * 
+	 * @param url 			request url.
+ 	 * @param method 		type of HTTP method.
+ 	 * @param timestamp 	timestamp in seconds.
+ 	 * @param nonce 		random string.
+ 	 * @param credentials 	hawk credentials object.
+ 	 * @param payload 		request body.
+ 	 * @param ext Some 		extra string.
+ 	 * 
+ 	 * @return the normalized string according to Hawk protocol.
+	 * */
+	private static String generateNormalizedString(URL url, String method, String timestamp, String nonce, HawkCredentials credentials, String payload, String ext) {
+		
+		// Preparing the variables.
+		String header = "hawk.1.header";
+		method = method.toUpperCase();
+		String query = (url.getQuery() == null) ? "" : url.getQuery();
+		String uri = url.getPath() + query;
+		String host = url.getHost();
+		
+		// Creating the normalized string.
+		StringBuilder builder = new StringBuilder();
+		builder.append(header + "\n")
+			   .append(timestamp + "\n")
+			   .append(nonce + "\n")
+			   .append(method + "\n")
+			   .append(uri + "\n")
+			   .append(host + "\n")
+			   .append(payload + "\n")
+			   .append(ext + "\n");
+		
+		return builder.toString();
+	}
+}
