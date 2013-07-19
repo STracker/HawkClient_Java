@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Test (1)" project="HawkClientTests" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="Tests.Test" time="33.542">
-    <testcase name="testGenerateAuthorizationHeader" classname="Tests.Test" time="33.542"/>
-  </testsuite>
-</testrun>

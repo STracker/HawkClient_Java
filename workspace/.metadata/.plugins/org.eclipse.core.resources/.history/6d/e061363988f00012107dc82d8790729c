@@ -7,8 +7,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 import com.google.common.io.BaseEncoding;
 
-import java.util.UUID;
-
 public class HawkClient {
 
 	/*
@@ -18,7 +16,7 @@ public class HawkClient {
 	 * */
 	public static String generateNonce() {
 		
-		return UUID.randomUUID().toString();
+		return null;
 	}
 	
 	/*

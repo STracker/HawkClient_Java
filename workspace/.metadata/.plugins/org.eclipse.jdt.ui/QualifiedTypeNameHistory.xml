@@ -13,8 +13,9 @@
 <fullyQualifiedTypeName name="com.loopj.android.http.AsyncHttpResponseHandler"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="Tests.AsyncHttpTest"/>
-<fullyQualifiedTypeName name="HawkClient.HawkClient"/>
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="java.nio.charset.Charset"/>
 <fullyQualifiedTypeName name="java.nio.ByteBuffer"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="HawkClient.HawkClient"/>
 </qualifiedTypeNameHistroy>

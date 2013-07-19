@@ -7,20 +7,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 import com.google.common.io.BaseEncoding;
 
-import java.util.UUID;
-
 public class HawkClient {
 
-	/*
-	 * This function generates and returns a random string (nonce).
-	 * 
-	 * @return The random nonce.
-	 * */
-	public static String generateNonce() {
-		
-		return UUID.randomUUID().toString();
-	}
-	
 	/*
 	 * This function generates an HTTP Authorization header with Hawk protocol. 
 	 * Is possible to generate a header with payload validation.
