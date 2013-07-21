@@ -27,6 +27,7 @@
 		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
 		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/Users/ricardosousa/Desktop/HawkClient1.2.0.jar"/>
 			<item value="/Users/ricardosousa/Desktop/HawkClient1.1.0.jar"/>
 			<item value="/Users/ricardosousa/Desktop/HawkClient1.0.0.jar"/>
 			<item value="/Users/ricardosousa/Desktop/HawkClient_1.0.0"/>
@@ -61,14 +62,14 @@
 		<item value="376" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
-	<section name="RenameInformationPopup">
-	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
 		<item value="false" key="create_main"/>
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="RemoveFinal"/>
