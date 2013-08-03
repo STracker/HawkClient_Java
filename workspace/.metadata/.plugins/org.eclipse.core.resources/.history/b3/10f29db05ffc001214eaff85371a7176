@@ -22,7 +22,7 @@ public class Test {
 	    String method = "GET";
 
 		try {
-			URL url = new URL("http://example.com/test/100005742427425");
+			URL url = new URL("http://example.com/test/100005742427425?lala=123");
 			
 			String header = HawkClient.createAuthorizationHeader(url, method, timestamp, nonce, credentials, null, null, false);
 			

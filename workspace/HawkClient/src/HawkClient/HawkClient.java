@@ -103,8 +103,8 @@ public class HawkClient {
 		// Preparing the variables.
 		String header = "hawk.1.header";
 		method = method.toUpperCase();
-		String query = url.getQuery();
-		String uri =  url.getPath() + ((query == null)? "" : "?" + query);
+		String query = (url.getQuery() == null)? "" : "?" + url.getQuery();
+		String uri =  url.getPath() + query;
 		String host = url.getHost();
 		
 		// Creating the normalized string.
